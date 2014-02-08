@@ -1,4 +1,4 @@
-% Created 2014-02-08 Sat 00:37
+% Created 2014-02-08 Sat 09:03
 \documentclass[sans,aspectratio=169,presentation,bigger,fleqn]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -20,7 +20,6 @@
 \setstretch{1.3}
 \usepackage{booktabs}
 \hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
-%\usetheme{naked}
 \usepackage{lmodern}
 \usetheme[alternativetitlepage=true,titleline=true]{Torino}
 \usecolortheme{freewilly}
@@ -37,8 +36,8 @@
 \maketitle
 
 \begin{frame}[fragile,label=sec-1]{Intro}
- \begin{itemize}
-\item \texttt{shiny} is an \texttt{R} package that enables web based applications
+ \texttt{shiny} is an \texttt{R} package that enables web based applications
+\begin{itemize}
 \item Overview of \texttt{shiny} basics
 \item Three examples
 \item The code/data necessary to reproduce anything in this talk is on \href{https://github.com/jwhendy/devFest-shiny}{github}
@@ -46,8 +45,8 @@
 \end{frame}
 \begin{frame}[fragile,label=sec-2]{Basics}
  \begin{itemize}
-\item \texttt{shiny} works inside of \href{http://www.rstudio.com/}{RStudio}
-\item Two files are required to run an application
+\item \texttt{shiny} needs to operate inside of \href{http://www.rstudio.com/}{RStudio}
+\item\relax [At least] two files are required to run an application
 \begin{itemize}
 \item \texttt{ui.R}: page format, user inputs, and outputs you're going to create
 \item \texttt{server.R}: contains the R code which will generate your dynamic output
@@ -114,14 +113,43 @@ runApp()
 \includegraphics[height=3.75cm]{./img/shiny-template.png}
 \end{center}
 \end{frame}
-\begin{frame}[label=sec-6]{Example: data analysis/exploration}
+
+\begin{frame}[label=sec-6]{Lots of choices}
+\begin{columns}
+\begin{column}{0.45\textwidth}
+\begin{block}{Input elements}
+\begin{itemize}
+\item checkbox
+\item date (single/range)
+\item file upload
+\item numeric/text box
+\item dropdown
+\item slider (single/double)
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{block}{Output methods}
+\begin{itemize}
+\item html
+\item image
+\item plot
+\item table
+\item text
+\item\relax [rendered] markdown
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+\begin{frame}[label=sec-7]{Example: data analysis/exploration}
 \begin{itemize}
 \item Enable rapid and dynamic switching of plot variables
 \item Allows for "plot prototyping" to examine trends/relationships
 \item Web-based solution is easily sharable with others
 \end{itemize}
 \end{frame}
-\begin{frame}[fragile,label=sec-7]{Fiddling with public transportation data}
+\begin{frame}[fragile,label=sec-8]{Fiddling with public transportation data}
  \begin{itemize}
 \item Grabbed data on public transportation centers around US (more \href{https://github.com/tcrug/public-transpo}{here})
 \item Some are quite efficient, some are horrible
@@ -132,7 +160,7 @@ runApp()
 
 \href{http://jwhendy.shinyapps.io/transpo-exploration/}{\alert{Demo time!}}
 \end{frame}
-\begin{frame}[fragile,label=sec-8]{Example: interactive contour plots}
+\begin{frame}[fragile,label=sec-9]{Example: interactive contour plots}
  \begin{itemize}
 \item Applied machine learning in \texttt{R} on product test data
 \item Contour plots can be nice for visualizing effect of inputs vs. outputs
@@ -143,14 +171,14 @@ runApp()
 
 \href{http://spark.rstudio.com/jwhendy/interactive-contour/}{\alert{Demo time!}}
 \end{frame}
-\begin{frame}[label=sec-9]{Example: visualizing insurance costs}
+\begin{frame}[label=sec-10]{Example: visualizing insurance costs}
 \begin{itemize}
 \item Benefit plan choices are tough!
 \item Started making visualizations/walkthroughs at 3M in 2011
 \item Goal: simplify decision process through visualization
 \end{itemize}
 \end{frame}
-\begin{frame}[label=sec-10]{The main issue}
+\begin{frame}[label=sec-11]{The main issue}
 \begin{itemize}
 \item HR typically sends you a table like this on glossy paper; which plan is best?
 \end{itemize}
@@ -168,7 +196,7 @@ Deductible & \$2,500 & \$750\\
 \end{tabular}
 \end{center}
 \end{frame}
-\begin{frame}[label=sec-11]{The main issue}
+\begin{frame}[label=sec-12]{The main issue}
 \begin{itemize}
 \item These employees are not smiling because they understood the table
 \end{itemize}
@@ -180,12 +208,12 @@ Deductible & \$2,500 & \$750\\
 \tiny
 Image credit: \url{http://jtsfs.com/employee-benefits-2/group-health-insurance/}
 \end{frame}
-\begin{frame}[label=sec-12]{In 2011, it was so simple!}
+\begin{frame}[label=sec-13]{In 2011, it was so simple!}
 \begin{center}
 \includegraphics[height=6.5cm]{./img/ins-intersections.pdf}
 \end{center}
 \end{frame}
-\begin{frame}[label=sec-13]{Fast-foward to 2013}
+\begin{frame}[label=sec-14]{Fast-foward to 2013}
 \begin{itemize}
 \item 3M introduces split deductibles on two plans
 \item Now which plan is best?
@@ -205,7 +233,7 @@ C & \$600 & \$2,750 & \$5,500 & \$5,500 & \$11,000 & \$1,250\\
 \end{center}
 \normalsize
 \end{frame}
-\begin{frame}[label=sec-14]{First shot}
+\begin{frame}[label=sec-15]{First shot}
 \begin{itemize}
 \item Now we need axes for max spender vs. everyone else\ldots{} contour plot!
 \end{itemize}
@@ -214,7 +242,7 @@ C & \$600 & \$2,750 & \$5,500 & \$5,500 & \$11,000 & \$1,250\\
 \includegraphics[height=5.5cm]{./img/ins-contour.pdf}
 \end{center}
 \end{frame}
-\begin{frame}[label=sec-15]{Winning cost map}
+\begin{frame}[label=sec-16]{Winning cost map}
 \begin{itemize}
 \item "Stack" the contours, figure out which one is lowest
 \end{itemize}
@@ -223,7 +251,7 @@ C & \$600 & \$2,750 & \$5,500 & \$5,500 & \$11,000 & \$1,250\\
 \includegraphics[height=5.5cm]{./img/ins-cost-map.pdf}
 \end{center}
 \end{frame}
-\begin{frame}[fragile,label=sec-16]{So, what about \emph{this} year?}
+\begin{frame}[fragile,label=sec-17]{So, what about \emph{this} year?}
  \begin{itemize}
 \item I used \texttt{shiny}, obviously!
 \item Dynamic UI elements for \# of people on plan
@@ -232,7 +260,7 @@ C & \$600 & \$2,750 & \$5,500 & \$5,500 & \$11,000 & \$1,250\\
 \item Put an anonymized version on \href{http://spark.rstudio.com/jwhendy/insurance-visualizer}{RStudio server}
 \end{itemize}
 \end{frame}
-\begin{frame}[label=sec-17]{Table of possible outcomes}
+\begin{frame}[label=sec-18]{Table of possible outcomes}
 \begin{center}
 \tiny
 \begin{center}
@@ -259,7 +287,7 @@ ded\(_{\text{ind}}\) & oop\(_{\text{ind}}\) & ded\(_{\text{rem}}\) & oop\(_{\tex
 \normalsize
 \end{center}
 \end{frame}
-\begin{frame}[fragile,label=sec-18]{Check against criteria; convert to binary}
+\begin{frame}[fragile,label=sec-19]{Check against criteria; convert to binary}
  \scriptsize
 \begin{verbatim}
   test_case <- c(rep(c(exp_ind, exp_rem, exp_ind + exp_rem),   # vector of predicted costs
@@ -278,7 +306,7 @@ ded\(_{\text{ind}}\) & oop\(_{\text{ind}}\) & ded\(_{\text{rem}}\) & oop\(_{\tex
 \end{verbatim}
 \normalsize
 \end{frame}
-\begin{frame}[fragile,label=sec-19]{Hacky function lookup}
+\begin{frame}[fragile,label=sec-20]{Hacky function lookup}
  \tiny
 \begin{verbatim}
 map_funcs <- list(
@@ -303,43 +331,57 @@ map_funcs <- list(
 \end{verbatim}
 \normalsize
 \end{frame}
-\begin{frame}[label=sec-20]{}
+\begin{frame}[label=sec-21]{}
 \vfill
 \begin{center}
 'Nuff talk, let's take a \href{http://spark.rstudio.com/jwhendy/insurance-visualizer}{look}!
 \end{center}
 \vfill
 \end{frame}
-\begin{frame}[fragile,label=sec-21]{Sharing \texttt{shiny} apps}
+\begin{frame}[fragile,label=sec-22]{So, why \emph{are} they smiling?}
  \begin{itemize}
-\item Method 1: tar/zip all files, send, have user run locally
-\item Method 2: install \href{http://www.rstudio.com/shiny/server/}{shiny-server} on local machine
+\item Perhaps they were just playing with \texttt{shiny}!
+\end{itemize}
 
-\item Method 3: request account for RStudio server account (still available?)
+\begin{center}
+\includegraphics[height=5cm]{./img/choosing-insurance.jpg}
+\end{center}
+
+\vspace{-0.5cm}
+
+\tiny
+Image credit: \url{http://jtsfs.com/employee-benefits-2/group-health-insurance/}
+\end{frame}
+\begin{frame}[fragile,label=sec-23]{Sharing \texttt{shiny} apps}
+ \begin{itemize}
+\item tar/zip all files, send, have user run locally
+\item Install \href{http://www.rstudio.com/shiny/server/}{shiny-server} on local machine
+
+\item Request account for RStudio server account (still available?)
 \begin{itemize}
 \item Create/upload files; \url{http://spark.rstudio.com/uname/appName}
 \end{itemize}
 
-\item Method 4: request account on \emph{new} RStudio server \href{http://www.shinyapps.io/signup.html}{here}
+\item Request account on \emph{new} RStudio server \href{http://www.shinyapps.io/signup.html}{here}
 \begin{itemize}
-\item Create apps locally, then follow \href{https://github.com/rstudio/shinyapps/}{shinyapps} instructions
+\item Create apps locally, then follow setup \href{https://github.com/rstudio/shinyapps/blob/master/guide/guide.md}{instructions}
 \item When satisfied, just run \texttt{deployApp()}!
-\item Visit app at \url{http://uname.shinyapps.io/appName/}
+\item App goes live at \url{http://uname.shinyapps.io/appName/}
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[fragile,label=sec-22]{References}
+\begin{frame}[fragile,label=sec-24]{References}
  \begin{itemize}
 \item \href{http://www.rstudio.com/shiny/}{Getting started} with \texttt{shiny}
 \item \texttt{shiny} \href{https://groups.google.com/forum/#!forum/shiny-discuss}{mailing list}
-\item RStudio server \href{https://shinyapps.io/}{application}
+\item RStudio server account \href{https://shinyapps.io/}{request}
 \item \href{http://stackoverflow.com/questions/19130455/create-dynamic-number-of-input-elements-with-r-shiny}{SO question} on creating dymanic input elements
 \item \href{http://stackoverflow.com/questions/17683933/set-global-object-in-shiny}{SO question} on global variables (not intuitive!)
 \item \href{http://stackoverflow.com/questions/17838709/scale-and-size-of-plot-in-rstudio-shiny}{SO question} on sizing plots in \texttt{shiny}
 \item \href{http://stackoverflow.com/questions/17958730/faceting-a-set-of-contour-plots-in-ggplot-r}{SO question} that solved my contour plot issue; repaid with \texttt{shiny} example
 \end{itemize}
 \end{frame}
-\begin{frame}[label=sec-23]{Apps in this presentation}
+\begin{frame}[label=sec-25]{Apps in this presentation}
 \begin{itemize}
 \item Transpo exploration: \href{http://spark.rstudio.com/jwhendy/transpo-exploration/}{spark.rstudio} or \href{http://jwhendy.shinyapps.io/transpo-exploration}{shinyapps.io}
 \item \href{http://spark.rstudio.com/jwhendy/interactive-contour/}{Interactive contour}
@@ -348,7 +390,7 @@ map_funcs <- list(
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label=sec-24]{Tools}
+\begin{frame}[label=sec-26]{Tools}
 Presentation made entirely with open source software!
 
 \begin{center}
@@ -366,7 +408,7 @@ Presentation made entirely with open source software!
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label=sec-25]{}
+\begin{frame}[label=sec-27]{}
 \LARGE
 \begin{center}
 Questions?

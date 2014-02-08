@@ -6,22 +6,21 @@
 #+startup: beamer
 #+latex_class_options: [sans,aspectratio=169,presentation,bigger,fleqn]
 #+options: H:1
-#+latex_header: %\usetheme{naked}
 #+latex_header: \usepackage{lmodern}
 #+latex_header: \usetheme[alternativetitlepage=true,titleline=true]{Torino}
 #+latex_header: \usecolortheme{freewilly}
 
 * Intro
 
-- =shiny= is an =R= package that enables web based applications
+=shiny= is an =R= package that enables web based applications
 - Overview of =shiny= basics
 - Three examples
 - The code/data necessary to reproduce anything in this talk is on [[https://github.com/jwhendy/devFest-shiny][github]]
 
 * Basics
 
-- =shiny= works inside of [[http://www.rstudio.com/][RStudio]]
-- Two files are required to run an application
+- =shiny= needs to operate inside of [[http://www.rstudio.com/][RStudio]]
+- [At least] two files are required to run an application
   - =ui.R=: page format, user inputs, and outputs you're going to create
   - =server.R=: contains the R code which will generate your dynamic output
 
@@ -88,6 +87,33 @@ runApp()
 #+attr_latex: :height 3.75cm
 [[./img/shiny-template.png]]
 #+end_center
+* Lots of choices
+
+** Input elements					      :B_block:BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: 0.45
+   :BEAMER_env: block
+   :END:
+
+- checkbox
+- date (single/range)
+- file upload
+- numeric/text box
+- dropdown
+- slider (single/double)
+
+** Output methods					      :B_block:BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: 0.45
+   :BEAMER_env: block
+   :END:
+
+- html
+- image
+- plot
+- table
+- text
+- [rendered] markdown
 
 * Example: data analysis/exploration
 
@@ -269,24 +295,38 @@ map_funcs <- list(
 #+end_center
 \vfill
 
+* So, why /are/ they smiling?
+
+- Perhaps they were just playing with =shiny=!
+
+#+begin_center
+#+attr_latex: :height 5cm
+[[./img/choosing-insurance.jpg]]
+#+end_center
+
+#+latex: \vspace{-0.5cm}
+
+#+latex: \tiny
+Image credit: http://jtsfs.com/employee-benefits-2/group-health-insurance/
+
 * Sharing =shiny= apps
 
-- Method 1: tar/zip all files, send, have user run locally
-- Method 2: install [[http://www.rstudio.com/shiny/server/][shiny-server]] on local machine
+- tar/zip all files, send, have user run locally
+- Install [[http://www.rstudio.com/shiny/server/][shiny-server]] on local machine
 
-- Method 3: request account for RStudio server account (still available?)
+- Request account for RStudio server account (still available?)
   - Create/upload files; http://spark.rstudio.com/uname/appName
 
-- Method 4: request account on /new/ RStudio server [[http://www.shinyapps.io/signup.html][here]]
-  - Create apps locally, then follow [[https://github.com/rstudio/shinyapps/][shinyapps]] instructions
+- Request account on /new/ RStudio server [[http://www.shinyapps.io/signup.html][here]]
+  - Create apps locally, then follow setup [[https://github.com/rstudio/shinyapps/blob/master/guide/guide.md][instructions]]
   - When satisfied, just run =deployApp()=!
-  - Visit app at http://uname.shinyapps.io/appName/
+  - App goes live at http://uname.shinyapps.io/appName/
 
 * References
 
 - [[http://www.rstudio.com/shiny/][Getting started]] with =shiny= 
 - =shiny= [[https://groups.google.com/forum/#!forum/shiny-discuss][mailing list]]
-- RStudio server [[https://shinyapps.io/][application]]
+- RStudio server account [[https://shinyapps.io/][request]]
 - [[http://stackoverflow.com/questions/19130455/create-dynamic-number-of-input-elements-with-r-shiny][SO question]] on creating dymanic input elements
 - [[http://stackoverflow.com/questions/17683933/set-global-object-in-shiny][SO question]] on global variables (not intuitive!)
 - [[http://stackoverflow.com/questions/17838709/scale-and-size-of-plot-in-rstudio-shiny][SO question]] on sizing plots in =shiny=
