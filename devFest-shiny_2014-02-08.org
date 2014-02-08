@@ -1,4 +1,4 @@
-#+title: An introduction to Shiny
+#+title: An introduction to =shiny=
 #+author: John Henderson
 #+email: jw.hendy@gmail.com
 #+date: 08 February 2014
@@ -16,7 +16,7 @@
 - Overview of =shiny= basics
 - Three examples
 - The code/data necessary to reproduce anything in this talk is on [[https://github.com/jwhendy/devFest-shiny][github]]
-
+  - https://github.com/jwhendy/devFest-shiny
 * Basics
 
 - =shiny= needs to operate inside of [[http://www.rstudio.com/][RStudio]]
